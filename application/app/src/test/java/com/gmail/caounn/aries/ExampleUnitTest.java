@@ -1,4 +1,4 @@
-package com.gmail.caounn.ariesframe;
+package com.gmail.caounn.aries;
 
 import org.junit.Test;
 
