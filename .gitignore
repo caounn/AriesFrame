@@ -17,6 +17,7 @@ out/
 
 # Gradle files
 .gradle/
+.idea
 build/
 
 # Local configuration file (sdk path, etc)
@@ -66,3 +67,16 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 
+.idea/codeStyles/
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/runConfigurations.xml
+.idea/vcs.xml
+application/app/libs/
+application/app/src/main/java/com/gmail/caounn/aries/
+base/commons/libs/
+base/commons/src/main/java/
+base/commons/src/main/res/drawable/
