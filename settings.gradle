@@ -1,0 +1,4 @@
+include ':app', ':commons'
+project(':app').projectDir = new File(rootDir, 'application/app')
+project(':commons').projectDir = new File(rootDir, 'base/commons')
+
