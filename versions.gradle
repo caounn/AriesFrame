@@ -1,24 +1,80 @@
+/**
+ * 支持包配置
+ */
+
 ext.deps = [:]
 def versions = [:]
 versions.android_gradle_plugin = "3.1.3"
-
-def deps = [:]
-
-deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
-ext.deps = deps
+versions.constraint_layout = "1.1.2"
+versions.support="27.1.1"
+versions.junit="4.12"
+versions.test_run="1.0.2"
+versions.test_espresso="3.0.2"
+versions.rxjava="2.1.14"
+versions.rxandroid="2.0.2"
+versions.rxbind="2.1.1"
+versions.retrofit="2.4.0"
+versions.okhttp="3.10.0"
+versions.glide="4.7.1"
+versions.bugly="latest.release"
+versions.dagger="2.x"
 
 def build_versions = [:]
 build_versions.min_sdk = 17
 build_versions.target_sdk = 27
-build_versions.build_tools = "27.0.3"
+build_versions.sdk_version = 27
+build_versions.code = 1
+build_versions.name = "1.0"
+build_versions.id = "com.gmail.caounn.aries"
 ext.build_versions = build_versions
 
-
+def deps = [:]
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+deps.constraint_layout="com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+deps.appcompat="com.android.support:appcompat-v7:$versions.support"
+deps.junit="junit:junit:$versions.junit"
+deps.test_runner="com.android.support.test:runner:$versions.test_run"
+deps.test_espresso="com.android.support.test.espresso:espresso-core:$versions.test_espresso"
+deps.design = "com.android.support:design:$versions.support"
+deps.v4 = "com.android.support:support-v4:$versions.support"
 ext.deps = deps
+
+def rx=[:]
+rx.rxjava="io.reactivex.rxjava2:rxjava:$versions.rxjava"
+rx.rxandroid="io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+rx.rxbind="com.jakewharton.rxbinding2:rxbinding:$versions.rxbind"
+ext.rx=rx
+
+def net=[:]
+net.retrofit="com.squareup.retrofit2:retrofit:$versions.retrofit"
+net.okhttp="com.squareup.okhttp3:okhttp:$versions.okhttp"
+net.adapter_rxjava="om.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+net.converter_gson="com.squareup.retrofit2:converter-gson:$versions.retrofit"
+ext.net=net
+
+def glide=[:]
+glide.glide="com.github.bumptech.glide:glide:$versions.glide"
+glide.compiler="com.github.bumptech.glide:compiler:$versions.glide"
+glide.integration="com.github.bumptech.glide:okhttp3-integration:$versions.glide"
+ext.glide=glide
+
+def bugly=[:]
+bugly.crashreport="com.tencent.bugly:crashreport:$versions.bugly"
+bugly.native="com.tencent.bugly:nativecrashreport:$versions.bugly"
+ext.bugly=bugly
+
+def dagger=[:]
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
+dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
+ext.dagger=dagger
 
 def addRepos(RepositoryHandler handler) {
   handler.google()
   handler.jcenter()
   handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
+
 ext.addRepos = this.&addRepos
