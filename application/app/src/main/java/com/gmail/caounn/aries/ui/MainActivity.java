@@ -1,10 +1,10 @@
 package com.gmail.caounn.aries.ui;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import com.gmail.caounn.aries.R;
-import com.gmail.caounn.commons.ui.BaseActivity;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
