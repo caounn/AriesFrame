@@ -1,8 +1,16 @@
 /**
- * 支持包配置
+ * 社会化组件key
  */
-
-ext.deps = [:]
+def key=[:]
+key.wechat=""
+key.qq=""
+key.weibo=""
+key.bugly=""
+key.pack="com.gmail.caounn.aries"
+ext.key=key
+/**
+ * 支持包版本
+ */
 def versions = [:]
 versions.android_gradle_plugin = "3.1.3"
 versions.constraint_layout = "1.1.2"
@@ -25,7 +33,6 @@ build_versions.target_sdk = 27
 build_versions.sdk_version = 27
 build_versions.code = 1
 build_versions.name = "1.0"
-build_versions.id = "com.gmail.caounn.aries"
 ext.build_versions = build_versions
 
 def deps = [:]
@@ -73,11 +80,14 @@ ext.dagger=dagger
 
 def share=[:]
 share.wechat="com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+"
+share.weibo="com.sina.weibo.sdk:core:4.2.7:openDefaultRelease@aar"
+ext.share=share
 
 def addRepos(RepositoryHandler handler) {
   handler.google()
   handler.jcenter()
   handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+  handler.maven { url "https://dl.bintray.com/thelasterstar/maven/" }
 }
 
 ext.addRepos = this.&addRepos
