@@ -1,4 +1,4 @@
-include ':app', ':commons'
+include ':app', ':commons', ':shares'
 project(':app').projectDir = new File(rootDir, 'application/app')
 project(':commons').projectDir = new File(rootDir, 'base/commons')
-
+project(':shares').projectDir=new File(rootDir,'base/shares')

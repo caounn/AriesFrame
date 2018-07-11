@@ -1,15 +1,16 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
   compileSdkVersion build_versions.sdk_version
   defaultConfig {
-    applicationId build_versions.id
     minSdkVersion build_versions.min_sdk
     targetSdkVersion build_versions.target_sdk
     versionCode build_versions.code
     versionName build_versions.name
+
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
+
   buildTypes {
     release {
       minifyEnabled false
@@ -19,17 +20,8 @@ android {
 }
 
 dependencies {
-  implementation project(':commons')
-  implementation project(':shares')
-  implementation fileTree(include: ['*.jar'], dir: 'libs')
-  implementation deps.constraint_layout
-  implementation deps.appcompat
-  implementation dagger.runtime
-  implementation dagger.android
-  implementation dagger.android_support
-  implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-  annotationProcessor dagger.android_support_compiler
-  annotationProcessor dagger.compiler
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
   testImplementation deps.junit
   androidTestImplementation deps.test_runner
   androidTestImplementation deps.test_espresso
