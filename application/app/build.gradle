@@ -31,6 +31,15 @@ dependencies {
   implementation dagger.runtime
   implementation dagger.android
   implementation dagger.android_support
+  annotationProcessor butterknife.compiler
+  implementation butterknife.butterknife
+  implementation net.retrofit
+  implementation net.okhttp
+  implementation net.adapter_rxjava
+  implementation net.converter_gson
+  implementation glide.glide
+  annotationProcessor glide.compiler
+  implementation glide.integration
   annotationProcessor dagger.android_support_compiler
   annotationProcessor dagger.compiler
   testImplementation deps.junit

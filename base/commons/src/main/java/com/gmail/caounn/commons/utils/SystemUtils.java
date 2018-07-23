@@ -36,14 +36,14 @@ public class SystemUtils {
   }
 
   /**
-   * system version
+   * 安卓版本
    */
   public static String getSystemVersion() {
     return Build.VERSION.RELEASE;
   }
 
   /**
-   * os name
+   * 设备名
    */
   public static String getOsName() {
     return Build.MODEL;

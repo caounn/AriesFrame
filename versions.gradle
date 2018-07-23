@@ -26,6 +26,7 @@ versions.okhttp="3.10.0"
 versions.glide="4.7.1"
 versions.bugly="latest.release"
 versions.dagger="2.16"
+versions.butterknife="8.8.1"
 
 def build_versions = [:]
 build_versions.min_sdk = 17
@@ -55,7 +56,7 @@ ext.rx=rx
 def net=[:]
 net.retrofit="com.squareup.retrofit2:retrofit:$versions.retrofit"
 net.okhttp="com.squareup.okhttp3:okhttp:$versions.okhttp"
-net.adapter_rxjava="om.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+net.adapter_rxjava="com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
 net.converter_gson="com.squareup.retrofit2:converter-gson:$versions.retrofit"
 ext.net=net
 
@@ -69,6 +70,11 @@ def bugly=[:]
 bugly.crashreport="com.tencent.bugly:crashreport:$versions.bugly"
 bugly.native="com.tencent.bugly:nativecrashreport:$versions.bugly"
 ext.bugly=bugly
+
+def butterknife=[:]
+butterknife.compiler="com.jakewharton:butterknife-compiler:$versions.butterknife"
+butterknife.butterknife="com.jakewharton:butterknife:$versions.butterknife"
+ext.butterknife=butterknife
 
 def dagger=[:]
 dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
