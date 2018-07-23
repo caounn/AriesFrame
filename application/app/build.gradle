@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+
   compileSdkVersion build_versions.sdk_version
   defaultConfig {
     applicationId key.pack
@@ -10,10 +11,28 @@ android {
     versionName build_versions.name
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
+  signingConfigs {
+    release {
+      keyAlias 'caounn'
+      keyPassword 'caoqiang'
+      storeFile file('../../sign/release.jks')
+      storePassword 'cao0221'
+    }
+    debug {
+      keyAlias 'caounn'
+      keyPassword 'cao0221'
+      storeFile file('../../sign/debug.jks')
+      storePassword 'caoqiang'
+    }
+  }
   buildTypes {
     release {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.release
+    }
+    debug {
+      signingConfig signingConfigs.debug
     }
   }
   compileOptions {
