@@ -16,6 +16,10 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 }
 
 dependencies {
@@ -27,7 +31,6 @@ dependencies {
   implementation dagger.runtime
   implementation dagger.android
   implementation dagger.android_support
-  implementation 'com.android.support.constraint:constraint-layout:1.1.2'
   annotationProcessor dagger.android_support_compiler
   annotationProcessor dagger.compiler
   testImplementation deps.junit

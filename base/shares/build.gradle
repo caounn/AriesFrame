@@ -17,11 +17,16 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 }
 
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
+  implementation share.wechat
+  implementation share.weibo
   testImplementation deps.junit
   androidTestImplementation deps.test_runner
   androidTestImplementation deps.test_espresso
