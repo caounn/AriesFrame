@@ -12,6 +12,7 @@ import javax.inject.Singleton;
 @Component(modules = {
     ApplicationModule.class,
     ActivityBindingModlue.class,
+    ProjectModule.class,
     AndroidSupportInjectionModule.class
 })
 public interface AppComponent extends AndroidInjector<AriesApplication> {
