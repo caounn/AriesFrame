@@ -2,7 +2,6 @@ package com.gmail.caounn.aries.ui.load;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.widget.ImageView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,6 +22,6 @@ public class LoadActivity extends BaseActivity implements LoadContract.View {
   }
 
   @Override public void showError() {
-    Log.e("tag", "12");
+
   }
 }
