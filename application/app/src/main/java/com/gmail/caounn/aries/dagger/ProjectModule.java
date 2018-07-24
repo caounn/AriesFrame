@@ -10,9 +10,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
 public class ProjectModule {
+  private String url;
+
+  public ProjectModule(String url) {
+    this.url = url;
+  }
+
   @Singleton
   @Provides Retrofit retrofit(OkHttpClient okHttpClient) {
-    return new Retrofit.Builder().baseUrl("http://www.baidu.com/")
+    return new Retrofit.Builder().baseUrl(url)
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
