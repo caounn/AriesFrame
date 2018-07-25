@@ -10,7 +10,7 @@ android {
     versionName build_versions.name
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     ndk {
-      abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+      abiFilters "armeabi", "armeabi-v7a"
     }
     renderscriptTargetApi 27
     renderscriptSupportModeEnabled true
@@ -43,6 +43,7 @@ android {
           WEIBO_CHANNEL: "weibo"]
     }
     debug {
+      applicationIdSuffix ".debug"
       buildConfigField("String", "Api_Uri", key.url)
       signingConfig signingConfigs.debug
       manifestPlaceholders = [QZONE_ID: "tencent",
@@ -53,6 +54,11 @@ android {
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
+  }
+  android.applicationVariants.all { variant ->
+    variant.outputs.all {
+      outputFileName = "${variant.name}-${variant.versionName}.apk"
+    }
   }
 }
 
