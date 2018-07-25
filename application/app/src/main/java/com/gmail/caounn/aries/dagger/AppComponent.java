@@ -21,9 +21,7 @@ public interface AppComponent extends AndroidInjector<AriesApplication> {
 
     @BindsInstance
     AppComponent.Builder application(Application application);
-
     AppComponent.Builder projectModule(ProjectModule module);
-
     AppComponent build();
   }
 }

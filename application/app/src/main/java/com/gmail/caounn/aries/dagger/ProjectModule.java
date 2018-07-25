@@ -17,7 +17,7 @@ public class ProjectModule {
   }
 
   @Singleton
-  @Provides Retrofit retrofit(OkHttpClient okHttpClient) {
+  @Provides Retrofit providesRetrofit(OkHttpClient okHttpClient) {
     return new Retrofit.Builder().baseUrl(url)
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
@@ -27,7 +27,7 @@ public class ProjectModule {
 
   @Singleton
   @Provides
-  OkHttpClient okHttpClient() {
+  OkHttpClient providesOkHttpClient() {
     OkHttpClient.Builder builder = new OkHttpClient.Builder();
     return builder.build();
   }

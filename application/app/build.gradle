@@ -10,28 +10,36 @@ android {
     versionName build_versions.name
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     ndk {
-      abiFilters "armeabi", "armeabi-v7a"
+      abiFilters "armeabi", "armeabi-v7a","x86"
     }
     renderscriptTargetApi 27
     renderscriptSupportModeEnabled true
     buildConfigField("String", "Bugly_Id", key.bugly)
   }
   signingConfigs {
-    release {
-      keyAlias 'caounn'
-      keyPassword 'caoqiang'
-      storeFile file('../../sign/release.jks')
-      storePassword 'cao0221'
-    }
     debug {
       keyAlias 'caounn'
       keyPassword 'cao0221'
       storeFile file('../../sign/debug.jks')
       storePassword 'caoqiang'
     }
+    release {
+      keyAlias 'caounn'
+      keyPassword 'caoqiang'
+      storeFile file('../../sign/release.jks')
+      storePassword 'cao0221'
+    }
+
   }
   buildTypes {
-
+    debug {
+      applicationIdSuffix ".debug"
+      buildConfigField("String", "Api_Uri", key.url)
+      signingConfig signingConfigs.debug
+      manifestPlaceholders = [QZONE_ID: "tencent",
+          WEIBO_ID: "112",
+          WEIBO_CHANNEL: "weibo"]
+    }
     release {
       buildConfigField("String", "Api_Uri", key.url)
       minifyEnabled false
@@ -42,14 +50,7 @@ android {
           WEIBO_ID: "123",
           WEIBO_CHANNEL: "weibo"]
     }
-    debug {
-      applicationIdSuffix ".debug"
-      buildConfigField("String", "Api_Uri", key.url)
-      signingConfig signingConfigs.debug
-      manifestPlaceholders = [QZONE_ID: "tencent",
-          WEIBO_ID: "112",
-          WEIBO_CHANNEL: "weibo"]
-    }
+
   }
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
