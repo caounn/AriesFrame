@@ -6,21 +6,6 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 
 public class SystemUtils {
-  /**
-   * dp to px
-   */
-  public static float dp2px(Context context, float dpValue) {
-    float scale = context.getResources().getDisplayMetrics().density;
-    return dpValue * scale + 0.5f;
-  }
-
-  /**
-   * px to dp
-   */
-  public static float px2dp(Context context, float pxValue) {
-    float scale = context.getResources().getDisplayMetrics().density;
-    return pxValue / scale + 0.5f;
-  }
 
   /**
    * app version name

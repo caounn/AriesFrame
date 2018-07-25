@@ -2,7 +2,6 @@ package com.gmail.caounn.aries.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -14,7 +13,4 @@ public class AriesPreference {
     preferences = context.getSharedPreferences("", Context.MODE_PRIVATE);
   }
 
-  public void getInfo() {
-    Log.e("error", preferences.getString("123", "emtry"));
-  }
 }

@@ -27,6 +27,7 @@ versions.glide="4.7.1"
 versions.bugly="latest.release"
 versions.dagger="2.16"
 versions.butterknife="8.8.1"
+versions.gson="2.8.5"
 
 def build_versions = [:]
 build_versions.min_sdk = 17
@@ -45,6 +46,7 @@ deps.test_runner="com.android.support.test:runner:$versions.test_run"
 deps.test_espresso="com.android.support.test.espresso:espresso-core:$versions.test_espresso"
 deps.design = "com.android.support:design:$versions.support"
 deps.v4 = "com.android.support:support-v4:$versions.support"
+deps.gson="com.google.code.gson:gson:$versions.gson"
 ext.deps = deps
 
 def rx=[:]

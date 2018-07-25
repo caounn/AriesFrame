@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-
   compileSdkVersion build_versions.sdk_version
   defaultConfig {
     applicationId key.pack

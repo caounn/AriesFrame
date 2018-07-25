@@ -26,7 +26,7 @@ android {
 dependencies {
   implementation fileTree(include: ['*.jar'], dir: 'libs')
   testImplementation deps.junit
-
   androidTestImplementation deps.test_runner
   androidTestImplementation deps.test_espresso
+  implementation deps.gson
 }
