@@ -9,6 +9,12 @@ android {
     versionCode build_versions.code
     versionName build_versions.name
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    ndk {
+      abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+    }
+    renderscriptTargetApi 27
+    renderscriptSupportModeEnabled true
+    buildConfigField("String", "Bugly_Id", key.bugly)
   }
   signingConfigs {
     release {
@@ -25,13 +31,23 @@ android {
     }
   }
   buildTypes {
+
     release {
+      buildConfigField("String", "Api_Uri", key.url)
       minifyEnabled false
+      zipAlignEnabled true
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
       signingConfig signingConfigs.release
+      manifestPlaceholders = [QZONE_ID: "tencent",
+          WEIBO_ID: "123",
+          WEIBO_CHANNEL: "weibo"]
     }
     debug {
+      buildConfigField("String", "Api_Uri", key.url)
       signingConfig signingConfigs.debug
+      manifestPlaceholders = [QZONE_ID: "tencent",
+          WEIBO_ID: "112",
+          WEIBO_CHANNEL: "weibo"]
     }
   }
   compileOptions {
@@ -61,6 +77,7 @@ dependencies {
   implementation rx.rxjava
   implementation rx.rxandroid
   implementation rx.rxbind
+  implementation bugly.crashreport
   annotationProcessor dagger.android_support_compiler
   annotationProcessor dagger.compiler
   testImplementation deps.junit

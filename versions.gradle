@@ -5,7 +5,8 @@ def key=[:]
 key.wechat=""
 key.qq=""
 key.weibo=""
-key.bugly=""
+key.bugly='"1202321123"'
+key.url='"https://www.baidu.com"'
 key.pack="com.gmail.caounn.aries"
 ext.key=key
 /**
