@@ -59,6 +59,9 @@ dependencies {
   implementation glide.glide
   annotationProcessor glide.compiler
   implementation glide.integration
+  implementation rx.rxjava
+  implementation rx.rxandroid
+  implementation rx.rxbind
   annotationProcessor dagger.android_support_compiler
   annotationProcessor dagger.compiler
   testImplementation deps.junit

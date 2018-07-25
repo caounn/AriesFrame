@@ -1,11 +1,17 @@
 package com.gmail.caounn.aries.data.net;
 
+import io.reactivex.Observable;
+import io.reactivex.schedulers.Schedulers;
+import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import retrofit2.Retrofit;
 
+/**
+ * 接口实现
+ */
 @Singleton
-public class Http {
+public class Http implements Api{
 
   Api api;
 
@@ -13,6 +19,9 @@ public class Http {
     api = retrofit.create(Api.class);
   }
 
-  public void getInfo() {
+  @Override public Observable<String> login(Map<String, String> obj) {
+    return api.login(obj).subscribeOn(Schedulers.io());
   }
+
+
 }
