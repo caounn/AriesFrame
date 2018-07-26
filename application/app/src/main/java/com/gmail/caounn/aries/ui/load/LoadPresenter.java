@@ -1,15 +1,15 @@
 package com.gmail.caounn.aries.ui.load;
 
 import android.support.annotation.Nullable;
-import com.gmail.caounn.aries.data.DataRepository;
+import com.gmail.caounn.aries.data.DataSource;
 import javax.inject.Inject;
 
 public class LoadPresenter implements LoadContract.Presenter {
   @Nullable
   private LoadContract.View loadView;
-  DataRepository repository;
+  DataSource repository;
 
-  @Inject LoadPresenter(DataRepository repository) {
+  @Inject LoadPresenter(DataSource repository) {
     this.repository = repository;
   }
 

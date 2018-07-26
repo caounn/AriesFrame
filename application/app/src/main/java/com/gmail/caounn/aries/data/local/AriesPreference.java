@@ -1,4 +1,4 @@
-package com.gmail.caounn.aries.utils;
+package com.gmail.caounn.aries.data.local;
 
 import android.content.Context;
 import android.content.SharedPreferences;
