@@ -9,6 +9,6 @@ public interface LoadContract {
   }
 
   interface Presenter extends BasePresenter<View> {
-
+    void initApp();
   }
 }

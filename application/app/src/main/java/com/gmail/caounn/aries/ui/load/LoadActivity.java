@@ -24,4 +24,9 @@ public class LoadActivity extends BaseActivity implements LoadContract.View {
   @Override public void showError() {
 
   }
+
+  @Override protected void onDestroy() {
+    super.onDestroy();
+    loadPresenter.dropView();
+  }
 }
