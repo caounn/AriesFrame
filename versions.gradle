@@ -27,7 +27,7 @@ versions.okhttp="3.11.0"
 versions.glide="4.8.0"
 versions.bugly="latest.release"
 versions.dagger="2.19"
-versions.butterknife="8.8.1"
+versions.butterknife="9.0.0-rc1"
 versions.gson="2.8.2"
 
 def build_versions = [:]
