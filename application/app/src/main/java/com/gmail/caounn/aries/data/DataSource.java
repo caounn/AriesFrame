@@ -1,6 +1,6 @@
 package com.gmail.caounn.aries.data;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.gmail.caounn.aries.data.bean.LoginBean;
 import io.reactivex.Observable;
 

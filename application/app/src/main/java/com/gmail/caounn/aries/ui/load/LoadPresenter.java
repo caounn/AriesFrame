@@ -1,6 +1,6 @@
 package com.gmail.caounn.aries.ui.load;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import com.gmail.caounn.aries.data.DataSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;

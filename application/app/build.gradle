@@ -8,7 +8,7 @@ android {
     targetSdkVersion build_versions.target_sdk
     versionCode build_versions.code
     versionName build_versions.name
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     ndk {
       abiFilters "armeabi", "armeabi-v7a","x86"
     }

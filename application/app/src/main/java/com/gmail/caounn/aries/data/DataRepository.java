@@ -1,7 +1,8 @@
 package com.gmail.caounn.aries.data;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 import com.gmail.caounn.aries.data.bean.LoginBean;
 import com.gmail.caounn.aries.data.net.Http;
 import com.gmail.caounn.commons.utils.ParamsWrapper;
