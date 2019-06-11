@@ -13,25 +13,25 @@ ext.key=key
  * 支持包版本
  */
 def versions = [:]
-versions.android_gradle_plugin = "3.3.1"
+versions.android_gradle_plugin = '3.4.1'
 versions.constraint_layout = "1.1.2"
 versions.support="1.0.0"
 versions.junit="4.12"
 versions.test_run="1.1.0"
 versions.test_espresso="3.1.0"
-versions.rxjava="2.2.6"
+versions.rxjava="2.2.9"
 versions.rxandroid="2.1.1"
 versions.rxbind="3.0.0-alpha2"
-versions.retrofit="2.5.0"
-versions.okhttp="3.13.1"
+versions.retrofit="2.6.0"
+versions.okhttp="3.14.2"
 versions.glide="4.9.0"
 versions.bugly="latest.release"
-versions.dagger="2.21"
+versions.dagger="2.23.1"
 versions.butterknife="10.1.0"
 versions.gson="2.8.5"
 
 def build_versions = [:]
-build_versions.min_sdk = 17
+build_versions.min_sdk = 21
 build_versions.target_sdk = 28
 build_versions.sdk_version = 28
 build_versions.code = 1
@@ -93,6 +93,7 @@ share.weibo="com.sina.weibo.sdk:core:4.2.7:openDefaultRelease@aar"
 ext.share=share
 
 def addRepos(RepositoryHandler handler) {
+
   handler.google()
   handler.mavenCentral()
   handler.jcenter()
